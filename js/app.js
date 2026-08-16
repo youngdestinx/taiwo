@@ -151,12 +151,8 @@ const WHATSAPP_NUMBER = "2348060647257";
    3. DOM ELEMENTS
    ========================================================= */
 
-const intro = document.getElementById("intro");
 const mainContent = document.getElementById("mainContent");
 
-
-const skipIntro = document.getElementById("skipIntro");
-const nextIntro = document.getElementById("nextIntro");
 
 const foodGrid = document.getElementById("foodGrid");
 const categories = document.querySelectorAll(".category");
@@ -288,49 +284,6 @@ function calculateTotal() {
     return calculateSubtotal() + calculateDeliveryFee();
 }
 
-
-/* =========================================================
-   5. INTRO SCREEN
-   ========================================================= */
-
-function openWebsite() {
-    intro.classList.add("hidden");
-    mainContent.classList.remove("hidden");
-
-    /*
-       Save this in the browser.
-
-       When the user returns later,
-       we can skip the intro screen.
-    */
-    localStorage.setItem("genialFoodIntroSeen", "true");
-}
-
-
-/*
-   Skip button.
-*/
-skipIntro.addEventListener("click", openWebsite);
-
-
-/*
-   Next button.
-
-   For this first version there is only one
-   introduction screen, so NEXT opens the website.
-*/
-nextIntro.addEventListener("click", openWebsite);
-
-
-/*
-   Check whether the user has already seen
-   the introduction.
-*/
-const introSeen = localStorage.getItem("genialFoodIntroSeen");
-
-if (introSeen === "true") {
-    openWebsite();
-}
 
 
 /* =========================================================
