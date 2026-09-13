@@ -888,7 +888,7 @@ p.field-error {
     }
 
     .hero {
-        min-height: 480px;
+        min-height: 100vh;
     }
 
     .hero-content {
